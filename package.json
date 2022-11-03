@@ -1,0 +1,16 @@
+{
+  "name": "ebindia",
+  "version": "1.0.0",
+  "description": "E-Bazaar of India. For small-scale retailers and promoting goods Made in India.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kabir Jyoti Bakshi",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.1"
+  }
+}

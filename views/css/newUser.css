@@ -1,0 +1,89 @@
+:root {
+  --logInSignupFormInputWidth: 80vw;
+}
+#logInSignUpBtns {
+  margin-block: 1.4rem;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding-block: 1.5rem;
+}
+#logInSignUpBtns button {
+  color: var(--color);
+  width: 20rem;
+  padding: 0.4rem;
+  background: var(--bgColorDark);
+  font-size: 1.4rem;
+  border-radius: 50px;
+  border: var(--borderWidth) solid var(--color);
+  font-weight: 700;
+}
+#logInSignUpBtns #logIn {
+  margin-block-end: 0.5rem;
+  background: transparent;
+}
+
+/* LOGIN SIGNUP */
+#signUpForm, #logInForm {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  /* transition: height var(--transitionDelay); */
+  /* display: none; */
+}
+.signUpFormExpanded {
+  height: 41.2rem !important;
+}
+.logInFormExpanded {
+  height: 13.4rem !important;
+}
+#signUpForm input, #signUpForm textarea, #logInForm input, #signUpForm #signUpBtn, #logInForm #logInBtn {
+  display: block;
+  width: var(--logInSignupFormInputWidth);
+  max-width: var(--logInSignupFormInputWidth);
+  min-width: var(--logInSignupFormInputWidth);
+  margin-inline: auto;
+  margin-block-end: 0.7rem;
+  border: 0;
+  border-bottom: var(--borderWidth) solid var(--color);
+  font-size: 1rem;
+  /* border-radius: 0.4rem; */
+  border-radius: 0.4rem 0.4rem 0 0;
+  background: var(--bgColorDark);
+  color: var(--color);
+  padding: 0.4rem;
+  font-weight: 700;
+}
+#signUpForm #signUpBtn, #logInForm #logInBtn {
+  margin-block-start: 1.8rem;
+  height: 2.6rem;
+  border: 0;
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+#signUpForm label, #logInForm label, #isSellerContainer {
+  margin-inline-start: calc((100vw - var(--logInSignupFormInputWidth))/2);
+  display: block;
+}
+
+#sellerInfoContainer {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.sellerInfoContainerUsable {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+#isSellerContainer {
+  margin-block-start: 2.2rem;
+  margin-block-end: 0.8rem;
+}
+#isSellerContainer * {
+  width: auto !important;
+  min-width: auto !important;
+  display: inline !important;
+  margin: 0 !important;
+}
