@@ -1,78 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="css/global.css" type="text/css" media="all" />
+  <%- include('partials/globalHead'); %>
   <link rel="stylesheet" href="css/newUser.css" type="text/css" media="all" />
-  
-  <!--Icons-->
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
  
- 
- <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" type="text/javascript" charset="utf-8"></script> -->
 </head>
 <body>
-  <%- include('partials/header'); %>
+  <%- include('partials/header', {searchQuery: ""}); %>
 
   <div id="logInSignUpBtns">
     <button id="logIn">Log In</button>
     <button id="signUp">Sign Up</button>
   </div>
       
-    <form id="signUpForm" accept-charset="utf-8" action="/signup" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name"/>
+  <form id="signUpForm" accept-charset="utf-8" action="/signup" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name"/>
+    
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username"/>
+    <!-- <p id="usernameTaken" class="red">Username already taken!</p> -->
+    
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password"/>
+    
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" name="confirmPassword" id="confirmPassword"/>
+    <!-- <p id="passwordsDontMatch" class="red">Passwords don't match!</p> -->
+    
+    <label for="address">Address</label>
+    <textarea name="address" id="address"></textarea>
+    
+    <div id="isSellerContainer">
+      <input type="checkbox" name="isSeller" id="isSeller" />
+      <label for="isSeller">I am a seller</label>
+    </div>
+    
+    <span id="sellerInfoContainer">
+      <label for="shopName">Shop name</label>
+      <input type="text" name="shopName" id="shopName" />
       
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username"/>
-      <!-- <p id="usernameTaken" class="red">Username already taken!</p> -->
-      
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password"/>
-      
-      <label for="confirmPassword">Confirm Password</label>
-      <input type="password" name="confirmPassword" id="confirmPassword"/>
-      <!-- <p id="passwordsDontMatch" class="red">Passwords don't match!</p> -->
-      
-      <label for="address">Address</label>
-      <textarea name="address" id="address"></textarea>
-      
-      <div id="isSellerContainer">
-        <input type="checkbox" name="isSeller" id="isSeller" />
-        <label for="isSeller">I am a seller</label>
-      </div>
-      
-      <span id="sellerInfoContainer">
-        <label for="shopName">Shop name</label>
-        <input type="text" name="shopName" id="shopName" />
-        
-        <label for="shopAddress">Shop Address</label>
-        <textarea name="shopAddress" id="shopAddress"></textarea>
-      </span>
-      
-      <button id="signUpBtn" class="darkBtn" type="submit">Sign Up</button>
-    </form>
+      <label for="shopAddress">Shop Address</label>
+      <textarea name="shopAddress" id="shopAddress"></textarea>
+    </span>
+    
+    <button id="signUpBtn" class="darkBtn" type="submit">Sign Up</button>
+  </form>
+
+  <form id="logInForm" accept-charset="utf-8">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="logInUsername"/>
+    
+    <label for="password">Password</label>
+    <input type="password" name="password" id="logInpassword"/>
+    
+    <button id="logInBtn" class="darkBtn" type="submit">log In</button>
+  </form>
+  <!-- <script>
+    (() => {
+      var script = document.createElement('script'); script.src = "//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () {
+        eruda.init()
+      }
+    })();
+  </script> -->
+  <script src="/js/newUser.js" type="text/javascript" charset="utf-8"></script>
   
-    <form id="logInForm" accept-charset="utf-8">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="logInUsername"/>
-      
-      <label for="password">Password</label>
-      <input type="password" name="password" id="logInpassword"/>
-      
-      <button id="logInBtn" class="darkBtn" type="submit">logIn</button>
-    </form>
-
-  <footer>
-    <%- include('partials/footer'); %>
-  </footer>
-
-  <script src="js/newUser.js" type="text/javascript" charset="utf-8"></script>
+  <%- include('partials/footer'); %>
 </body>
 </html>

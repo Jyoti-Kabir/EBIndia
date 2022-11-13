@@ -1,12 +1,26 @@
 const nav = document.querySelector("nav"),
-      search = document.getElementById('search')
-      ;
+searchForm = document.getElementById('search')
+searchInp = document.getElementById('searchInp')
+;
+
+const toggleShow = (elem) => {
+  if (elem.offsetHeight === 0) {
+    gsap.to(elem, {
+      height: 'auto',
+      opacity: 1
+    })
+  } else {
+    gsap.to(elem, {
+      height: 0,
+      opacity: 0
+    })
+  }
+}
 
 const menuClicked = () => {
-  nav.classList.toggle('expandNav');
+  toggleShow(nav)
 }
 
 const menuSearchClicked = () => {
-  search.classList.toggle('expandSearch');
+  toggleShow(searchForm)
 }
-

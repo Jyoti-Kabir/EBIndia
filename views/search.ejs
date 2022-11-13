@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/globalHead'); %>
+  <link rel="stylesheet" href="css/search.css" type="text/css" media="all" />
+ 
+</head>
+<body>
+  <%- include('partials/header', {searchQuery: query}); %>
+  
+  <h1 id="heading">Search Results</h1>
+  
+  <% for(i=1; i < 11; i++) { %>
+  <div class="product">
+    <!-- <img class="productImg" src="https://s3.amazonaws.com/www-inside-design/uploads/2020/10/aspect-ratios-blogpost-1x1-1-768x768.png" alt="product" /> -->
+    <img class="productImg" src="images/productImage.jpg" alt="product" />
+    <div class="productTitle">
+      Sample Product
+    </div>
+    <div class="productPrice">
+      999&#x20B9;
+    </div>
+  </div>
+  <% } %>
+  
+  <script src="/js/search.js" type="text/javascript" charset="utf-8"></script>
+  <%- include('partials/footer'); %>
+</body>
+</html>

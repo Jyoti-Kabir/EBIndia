@@ -3,10 +3,9 @@ header {
   height: var(--headerFontSize);
   background: var(--bgColor);
   margin: 0;
-  padding-inline: var(--headerInlinePadding);
-  padding-block-start: var(--headerBlockPadding);
   height: auto;
   border-bottom: var(--borderWidth) solid var(--color);
+  padding: var(--headerPadding);
 }
 header h1 {
   font-size: var(--headerFontSize);
@@ -19,8 +18,8 @@ header h1 {
   /* HEADER BUTTONS */
 header #buttons {
   position: absolute; 
-  right: var(--headerInlinePadding);
-  float: right;
+  right: var(--headerPadding);
+  /* float: right; */
   display: inline-block;
 }
 header #buttons button {
@@ -34,10 +33,6 @@ header #search {
   border-radius: 0.4rem;
   height: 0;
   overflow: hidden;
-  transition: height var(--transitionDelay);
-}
-.expandSearch {
-  height: 2.5rem !important;
 }
 header #search * {
   color: var(--bgColor);
@@ -67,8 +62,7 @@ header #search #searchInp {
   height: var(--searchElemsHeight);
   line-height: var(--searchElemsHeight);
   padding: 0;
-  padding-inline: var(--headerInlinePadding);
-  /* border-bottom: 0.2rem solid var(--color); */
+  padding-inline: var(--headerPadding);
 }
 header #search #searchBtn {
   width: var(--searchElemsHeight);
@@ -78,19 +72,15 @@ header #search #searchBtn {
 }
   /* HEADER NAV */
 header nav {
-  padding-block-start: 0.6rem;
   height: 0;
   overflow: hidden;
-  transition: height var(--transitionDelay);
   text-align: center;
-}
-.expandNav {
-  height: calc(var(--navAHeight) * 2.5);
 }
 header nav a {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1rem;
   height: var(--navAHeight);
+  line-height: var(--navAHeight);
   /* width: auto; */
   text-align: center;
   border-radius: 0.2rem;
