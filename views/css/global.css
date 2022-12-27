@@ -21,6 +21,17 @@ body {
   font-weight: 500;
   box-sizing: border-box;
 }
+.heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-inline-start: var(--headerPadding);
+  margin-block: 0.6rem;
+}
+
+footer {
+  font-size: 0.8rem;
+}
+
 button, a {
   background: transparent;
   border: 0;

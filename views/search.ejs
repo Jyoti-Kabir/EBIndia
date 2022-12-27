@@ -8,20 +8,25 @@
 <body>
   <%- include('partials/header', {searchQuery: query}); %>
   
-  <h1 id="heading">Search Results</h1>
+  <h1 class="heading">Search Results</h1>
   
-  <% for(i=1; i < 11; i++) { %>
-  <div class="product">
-    <!-- <img class="productImg" src="https://s3.amazonaws.com/www-inside-design/uploads/2020/10/aspect-ratios-blogpost-1x1-1-768x768.png" alt="product" /> -->
-    <img class="productImg" src="images/productImage.jpg" alt="product" />
-    <div class="productTitle">
-      Sample Product
+  <div class="products">
+    <% products.forEach((i) => { %>
+    <div class="product">
+      <!-- <img class="productImg" src="https://s3.amazonaws.com/www-inside-design/uploads/2020/10/aspect-ratios-blogpost-1x1-1-768x768.png" alt="product" /> -->
+      <!-- <img class="productImg" src="images/productImage.jpg" alt="product" /> -->
+      <img class="productImg" src="<%= i.url %>" alt="product" />
+      <div class="productInfo">
+        <div class="productTitle">
+          <%= i.name %>
+        </div>
+        <div class="productPrice">
+          <%= i.price %>&#x20B9; <span id="priceInfo">Per Unit</span>
+        </div>
+      </div>
     </div>
-    <div class="productPrice">
-      999&#x20B9;
-    </div>
+    <% }) %>
   </div>
-  <% } %>
   
   <script src="/js/search.js" type="text/javascript" charset="utf-8"></script>
   <%- include('partials/footer'); %>

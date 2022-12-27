@@ -11,6 +11,8 @@ header h1 {
   font-size: var(--headerFontSize);
   line-height: var(--headerFontSize);
   font-family: 'Kanit', sans-serif;
+  /* font-family: 'Krona One', sans-serif; */
+  /* font-family: 'Tinos', serif; */
   font-weight: 700;
   margin: 0;
   display: inline-block;
@@ -81,9 +83,11 @@ header nav a {
   font-size: 1rem;
   height: var(--navAHeight);
   line-height: var(--navAHeight);
-  /* width: auto; */
+  text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
+  color: black;
+  font-weight: 700;
 }
 header nav a:active, button:active {
   background: var(--color) !important;
