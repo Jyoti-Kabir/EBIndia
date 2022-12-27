@@ -49,7 +49,12 @@ app.get(`/search`, async (req, res) => {
   productList = [];
   await fetchUrl(`https://fakestoreapi.com/products`, function(error, meta, body) {
     productList = JSON.parse(body.toString())
-
+    for (var i = productList.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = productList[i];
+      productList[i] = productList[j];
+      productList[j] = temp;
+    }
     res.render(`search`, {
       query: req.query.q, products: productList
     })
@@ -60,9 +65,10 @@ app.get(`/searchBody`, async (req, res) => {
   // const body = await response.text();
   // res.text(body)
 
-  fetchUrl(`https://www.amazon.in/s?k=${req.query.q}&ref=nb_sb_noss`, function(error, meta, body) {
-    res.send(body.toString());
-  });
+  fetchUrl(`https://www.amazon.in/s?k=${req.query.q}&ref=nb_sb_noss`,
+    function(error, meta, body) {
+      res.send(body.toString());
+    });
 });
 
 
@@ -116,6 +122,6 @@ app.listen(port, () => {
 // const find = async (client) => {
 //   const result = await client.db(`schoolData`).collection(`schools`).find({
 //     _id: {$ne: -1}
-//   }).toArray();
+//   }).toproductList();
 //   console.log(result);
 // };
