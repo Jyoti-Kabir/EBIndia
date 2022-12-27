@@ -12,3 +12,47 @@
 //     y: -rect.top
 //   })
 // }
+
+let searchInp = document.getElementById('searchInp');
+let products = document.getElementById('products');
+
+
+fetch(`/searchBody?q=${searchInp.value}`)
+.then(res => res.text())
+.then(data => {
+  const doc = (new DOMParser()).parseFromString(data, "text/html");
+  // const productElems = doc.querySelectorAll('div.sg-row');
+  const productElems = doc.querySelectorAll('div.a-setion');
+  const productImageElems = doc.querySelectorAll('img.s-image');
+  const productNameElems = doc.querySelectorAll('span.a-text-normal');
+  const productPriceElems = doc.querySelectorAll('span.a-price-whole');
+  
+  console.log(productNameElems);
+  console.log(productElems.length);
+  for (let i = 0; i < productElems.length; i++) {
+    let productElem = document.createElement('div');
+    productElem.classList.add('product');
+    
+    let productImg = document.createElement('img');
+    productImg.src = productImageElems[i].src;
+    productElem.appendChild(productImg);
+    
+    let productInfo = document.createElement('div');
+    productInfo.classList.add('productInfo');
+    
+    productInfo.innerHTML = `
+      <div class="productTitle">
+        ${productNameElems[i].innerHTML}
+      </div>
+      <div class="productPrice">
+        ${productPriceElems[i].innerText}&#x20B9; <span class="priceInfo">Per Unit</span>
+      </div>`
+    
+    productElem.appendChild(productInfo);
+    
+    products.appendChild(productElem)
+  }
+})
+.catch(err => {
+  console.log(err);
+})

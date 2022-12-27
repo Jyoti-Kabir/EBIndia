@@ -10,18 +10,18 @@
   
   <h1 class="heading">Search Results</h1>
   
-  <div class="products">
+  <div id="products">
     <% products.forEach((i) => { %>
     <div class="product">
       <!-- <img class="productImg" src="https://s3.amazonaws.com/www-inside-design/uploads/2020/10/aspect-ratios-blogpost-1x1-1-768x768.png" alt="product" /> -->
       <!-- <img class="productImg" src="images/productImage.jpg" alt="product" /> -->
-      <img class="productImg" src="<%= i.url %>" alt="product" />
+      <img class="productImg" src="<%= i.image %>" alt="product" />
       <div class="productInfo">
         <div class="productTitle">
-          <%= i.name %>
+          <%= i.title %>
         </div>
         <div class="productPrice">
-          <%= i.price %>&#x20B9; <span id="priceInfo">Per Unit</span>
+          <%= i.price * 20 %>&#x20B9; <span class="priceInfo">Per Unit</span>
         </div>
       </div>
     </div>
