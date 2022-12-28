@@ -18,27 +18,40 @@
   overflow: hidden;
   display: flex;
 }
+.product .productImageContainer {
+  width: 35vw;
+  height: 35vw;
+  background: #fff;
+}
 .product .productImg {
   /* width: var(--productWidth); */
-  height: auto;
   /* height: auto; */
   /*width: var(--productWidth);*/
-  width: 30vw;
+  height: auto;
+  max-height: 35vw;
+  /*width: auto;*/
+  width: 35vw;
+  margin: auto;
 }
 .product .productInfo {
-  height: 100%;
+  height: 35vw;
   /* margin-block: auto; */
   padding: 2.2vw;
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: space-between;
   /* width: 100%; */
   /* height: calc(var(--productHeight) - var(--productWidth)); */
 }
 .product .productTitle {
   font-weight: 510;
   font-size: 4.2vw;
-  margin: auto;
+  height: 100%;
+  width: 90%;
+  /* white-space: wrap; */
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  /* margin: auto; */
 }
 .product .productPrice {
   font-family: Sans-Serif;
@@ -51,6 +64,55 @@
   opacity: 0.5;
   font-weight: 530;
 }
+#productDetail {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: var(--bgColor);
+  z-index: 999;
+  overflow-y: scroll;
+}
+#productDetail #productDetailImgContainer {
+  width: 100vw;
+  height: 100vw;
+}
+#productDetail #productDetailImgContainer #productDetailImg {
+  height: 100%;
+  margin: auto;
+}
+/* #productDetail #productNameTitle {
+  
+} */
+#productDetail #productInfoPara {
+  font-size: 1rem;
+  padding-inline: var(--headerPadding);
+  margin-block-start: 0;
+}
+#productDetail #productPrice {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-inline: var(--headerPadding);
+}
+#productDetail button {
+  display: block;
+  width: 20rem;
+  font-size: 1.6rem;
+  margin: auto;
+  margin-block-end: 0.5rem;
+  padding-block: 0.5rem;
+  background: var(--bgColorDark);
+  border-radius: 2rem;
+}
+#productDetail button:nth-child(2) {
+  background: var(--bgColor);
+  border: 0.8rem solid var(--bgColorDark);
+}
+
+
 
 @media only screen and (max-width: 300px) { 
   .product { 

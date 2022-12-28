@@ -3,6 +3,7 @@
 <head>
   <%- include('partials/globalHead'); %>
   <link rel="stylesheet" href="css/search.css" type="text/css" media="all" />
+  <script defer src="/js/search.js" type="text/javascript" charset="utf-8"></script>
  
 </head>
 <body>
@@ -10,25 +11,46 @@
   
   <h1 class="heading">Search Results</h1>
   
+  
+  <div id="productDetail">
+    <div id="productDetailImgContainer">
+      <img id="productDetailImg" src="images/productImage.jpg" alt="" />
+    </div>
+    <h3 id="productNameTitle" class="heading">Sample Product Full name</h3>
+    <p id="productInfoPara">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quam ipsum ipsa accusantium alias obcaecati, nisi deleniti quo eius doloremque illum illo ullam dicta, nesciunt magni quod, repudiandae autem ut qui hic!
+    </p>
+    <span id="productPrice">
+      <%= (99 * 20).toFixed(2) %> &#x20B9;
+    </span>
+    <span id="priceInfo">Per Unit</span>
+    
+    <button id="addToCartBtn">Add to Cart</button>
+    <button id="buyNowBtn">Buy Now</button>
+  </div>
+  
+  
   <div id="products">
     <% products.forEach((i) => { %>
     <div class="product">
       <!-- <img class="productImg" src="https://s3.amazonaws.com/www-inside-design/uploads/2020/10/aspect-ratios-blogpost-1x1-1-768x768.png" alt="product" /> -->
       <!-- <img class="productImg" src="images/productImage.jpg" alt="product" /> -->
-      <img class="productImg" src="<%= i.image %>" alt="product" />
+      <div class="productImageContainer">
+        <img class="productImg" src="<%= i.image %>" alt="product" />
+      </div>
       <div class="productInfo">
         <div class="productTitle">
           <%= i.title %>
         </div>
         <div class="productPrice">
-          <%= (i.price * 20).toFixed(2) %> &#x20B9; <span class="priceInfo">Per Unit</span>
+          <%= (i.price * 20).toFixed(2) %> &#x20B9;
+          <span class="priceInfo">Per Unit</span>
         </div>
       </div>
     </div>
     <% }) %>
   </div>
   
-  <script src="/js/search.js" type="text/javascript" charset="utf-8"></script>
   <%- include('partials/footer'); %>
 </body>
 </html>
